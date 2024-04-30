@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiveMinuteAdventure", "FiveMinuteAdventure\FiveMinuteAdventure.csproj", "{F2369155-F674-4A9F-AAB6-26FCEB3B3D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiveMinuteAdventureTests", "FiveMinuteAdventureTests\FiveMinuteAdventureTests.csproj", "{BD91FAAE-F473-4B90-BDA1-5338BAB27304}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{AF6F5B60-7061-4E3D-A7F5-38CD81007DAE}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.gitignore = ..\..\.gitignore
+		..\..\LICENSE = ..\..\LICENSE
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2369155-F674-4A9F-AAB6-26FCEB3B3D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2369155-F674-4A9F-AAB6-26FCEB3B3D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2369155-F674-4A9F-AAB6-26FCEB3B3D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2369155-F674-4A9F-AAB6-26FCEB3B3D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD91FAAE-F473-4B90-BDA1-5338BAB27304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD91FAAE-F473-4B90-BDA1-5338BAB27304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD91FAAE-F473-4B90-BDA1-5338BAB27304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD91FAAE-F473-4B90-BDA1-5338BAB27304}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
