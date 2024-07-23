@@ -19,7 +19,8 @@ public class StatsTests
             Level = 10,
             Attack = 5,
             Defense = 3,
-            Speed = 4
+            Speed = 4,
+            Magic = 2
         };
         
         // Act
@@ -32,6 +33,7 @@ public class StatsTests
             Assert.That(result.Attack == clonedStats.Attack);
             Assert.That(result.Defense == clonedStats.Defense);
             Assert.That(result.Speed == clonedStats.Speed);
+            Assert.That(result.Magic == clonedStats.Magic);
         });
     }
     
@@ -44,7 +46,8 @@ public class StatsTests
             Level = 2,
             Attack = 3,
             Defense = 4,
-            Speed = 5
+            Speed = 5,
+            Magic = 2
         };
         
         // Act
@@ -57,6 +60,7 @@ public class StatsTests
             Assert.That(result.Attack == _sut.Attack - statsToCompare.Attack);
             Assert.That(result.Defense == _sut.Defense - statsToCompare.Defense);
             Assert.That(result.Speed == _sut.Speed - statsToCompare.Speed);
+            Assert.That(result.Magic == _sut.Magic - statsToCompare.Magic);
         });
     }
 }

@@ -6,6 +6,7 @@ public class Stats
     public int Attack { get; set; }
     public int Defense { get; set; }
     public int Speed { get; set; }
+    public int Magic { get; set; }
 
     public Stats()
     {
@@ -13,6 +14,7 @@ public class Stats
         Attack = 1;
         Defense = 1;
         Speed = 1;
+        Magic = 1;
     }
     
     public Stats(Stats clone)
@@ -21,6 +23,7 @@ public class Stats
         Attack = clone.Attack;
         Defense = clone.Defense;
         Speed = clone.Speed;
+        Magic = clone.Magic;
     }
 
     public Stats CompareDifferenceInStats(Stats comparedStats)
@@ -30,7 +33,8 @@ public class Stats
             Level = Level - comparedStats.Level,
             Attack = Attack - comparedStats.Attack,
             Defense = Defense - comparedStats.Defense,
-            Speed = Speed - comparedStats.Speed
+            Speed = Speed - comparedStats.Speed,
+            Magic = Magic - comparedStats.Magic
         };
 
         return stats;
