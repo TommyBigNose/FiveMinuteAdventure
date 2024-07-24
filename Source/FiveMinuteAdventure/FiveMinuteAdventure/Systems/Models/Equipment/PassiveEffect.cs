@@ -20,17 +20,19 @@ public interface IPassiveEffect
     string Description { get; }
     Stats Stats { get; }
     PassiveEffectType PassiveEffectType { get; }
+    int PassiveEffectStrength { get; }
 }
 
 public class PassiveEffect : IPassiveEffect
 {
-    public PassiveEffect(int id, string name, string description, Stats stats, PassiveEffectType passiveEffectType)
+    public PassiveEffect(int id, string name, string description, Stats stats, PassiveEffectType passiveEffectType, int passiveEffectStrength)
     {
         Id = id;
         Name = name;
         Description = description;
         Stats = stats;
         PassiveEffectType = passiveEffectType;
+        PassiveEffectStrength = passiveEffectStrength;
     }
 
     public int Id { get; }
@@ -38,4 +40,5 @@ public class PassiveEffect : IPassiveEffect
     public string Description { get; }
     public Stats Stats { get; }
     public PassiveEffectType PassiveEffectType { get; }
+    public int PassiveEffectStrength { get; }
 }
