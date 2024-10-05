@@ -9,7 +9,7 @@ public interface IDataSource
     List<IPassiveEffect> GetAllPassiveEffects();
 }
 
-public class DataSource : IDataSource
+public class LocalDataSource : IDataSource
 {
     public List<Armor> GetAllArmors()
     {

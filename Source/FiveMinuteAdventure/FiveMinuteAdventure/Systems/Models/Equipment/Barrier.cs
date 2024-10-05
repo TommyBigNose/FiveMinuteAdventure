@@ -1,4 +1,4 @@
-﻿namespace FiveMinuteAdventure.Systems.Models;
+﻿namespace FiveMinuteAdventure.Systems.Models.Equipment;
 
 public class Barrier : IEquipment
 {

@@ -2,4 +2,5 @@
 
 global using FiveMinuteAdventure.Systems.Utilities;
 global using FiveMinuteAdventure.Systems.Models;
-global using Barrier = FiveMinuteAdventure.Systems.Models.Barrier;
+global using FiveMinuteAdventure.Systems.Models.Equipment;
+global using Barrier = FiveMinuteAdventure.Systems.Models.Equipment.Barrier;

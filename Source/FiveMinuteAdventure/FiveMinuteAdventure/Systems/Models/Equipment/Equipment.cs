@@ -1,4 +1,4 @@
-﻿namespace FiveMinuteAdventure.Systems.Models;
+﻿namespace FiveMinuteAdventure.Systems.Models.Equipment;
 
 public enum EquipmentType
 {
@@ -9,6 +9,29 @@ public enum EquipmentType
     Armor = 4,
     Barrier = 5,
     Component = 6
+}
+
+public static class EquipmentHelper
+{
+    public static List<EquipmentType> GetWeaponEquipmentTypes()
+    {
+        return new List<EquipmentType>()
+        {
+            EquipmentType.Blade,
+            EquipmentType.Gun,
+            EquipmentType.Staff,
+        };
+    }
+    
+    public static List<EquipmentType> GetArmorEquipmentTypes()
+    {
+        return new List<EquipmentType>()
+        {
+            EquipmentType.Armor,
+            EquipmentType.Barrier,
+            EquipmentType.Component,
+        };
+    }
 }
 
 public interface IEquipment
