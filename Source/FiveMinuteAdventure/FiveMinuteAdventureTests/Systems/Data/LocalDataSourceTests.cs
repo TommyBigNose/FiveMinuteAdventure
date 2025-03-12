@@ -15,6 +15,51 @@ public class LocalDataSourceTests
     {
 
     }
+    
+    [Test]
+    public void Should_GetAllArmors_When_Valid()
+    {
+        // Arrange
+        // Act
+        var result = _sut.GetAllArmors();
+
+        // Assert
+        Assert.Multiple(() =>
+        {
+            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not an Armor type");
+            Assert.That(result.Count, Is.GreaterThan(1), "Not all armors were returned");
+        });
+    }
+    
+    [Test]
+    public void Should_GetAllBarriers_When_Valid()
+    {
+        // Arrange
+        // Act
+        var result = _sut.GetAllBarriers();
+
+        // Assert
+        Assert.Multiple(() =>
+        {
+            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a barrier type");
+            Assert.That(result.Count, Is.GreaterThan(1), "Not all barriers were returned");
+        });
+    }
+    
+    [Test]
+    public void Should_GetAllComponents_When_Valid()
+    {
+        // Arrange
+        // Act
+        var result = _sut.GetAllComponents();
+
+        // Assert
+        Assert.Multiple(() =>
+        {
+            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a component type");
+            Assert.That(result.Count, Is.GreaterThan(1), "Not all components were returned");
+        });
+    }
 
     [Test]
     public void Should_GetAllWeapons_When_Valid()
