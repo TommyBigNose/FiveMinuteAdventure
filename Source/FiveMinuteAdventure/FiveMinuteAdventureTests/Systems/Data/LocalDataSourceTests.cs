@@ -41,7 +41,7 @@ public class LocalDataSourceTests
         // Assert
         Assert.Multiple(() =>
         {
-            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a barrier type");
+            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a Barrier (Armor) type");
             Assert.That(result.Count, Is.GreaterThan(1), "Not all barriers were returned");
         });
     }
@@ -56,7 +56,7 @@ public class LocalDataSourceTests
         // Assert
         Assert.Multiple(() =>
         {
-            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a component type");
+            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a Component (Armor) type");
             Assert.That(result.Count, Is.GreaterThan(1), "Not all components were returned");
         });
     }
@@ -73,6 +73,36 @@ public class LocalDataSourceTests
         {
             Assert.That(result.Any(_ => EquipmentHelper.GetWeaponEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a Weapon type");
             Assert.That(result.Count, Is.GreaterThan(1), "Not all weapons were returned");
+        });
+    }
+    
+    [Test]
+    public void Should_GetAllEquipment_When_Valid()
+    {
+        // Arrange
+        // Act
+        var result = _sut.GetAllEquipment();
+
+        // Assert
+        Assert.Multiple(() =>
+        {
+            Assert.That(result.Any(_ => EquipmentHelper.GetWeaponEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not a Weapon type");
+            Assert.That(result.Any(_ => EquipmentHelper.GetArmorEquipmentTypes().Contains(_.EquipmentType)), Is.True, "Some returned equipment was not an Armor type");
+            Assert.That(result.Count, Is.GreaterThan(1), "Not all equipment were returned");
+        });
+    }
+    
+    [Test]
+    public void Should_GetAllPassiveEffects_When_Valid()
+    {
+        // Arrange
+        // Act
+        var result = _sut.GetAllPassiveEffects();
+
+        // Assert
+        Assert.Multiple(() =>
+        {
+            Assert.That(result.Count, Is.GreaterThan(1), "Not all passive effects were returned");
         });
     }
 }

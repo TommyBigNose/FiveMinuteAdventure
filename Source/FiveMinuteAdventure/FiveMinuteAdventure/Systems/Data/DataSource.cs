@@ -41,7 +41,7 @@ public class LocalDataSource : IDataSource
                     Magic = 2,
                 },
                 equipmentType: EquipmentType.Armor,
-                passiveEffects: new List<PassiveEffect>())
+                passiveEffects: new List<PassiveEffect>()),
         };
         return armors;
     }
@@ -75,7 +75,7 @@ public class LocalDataSource : IDataSource
                     Magic = 1,
                 },
                 equipmentType: EquipmentType.Armor,
-                passiveEffects: new List<PassiveEffect>())
+                passiveEffects: new List<PassiveEffect>()),
         };
         return barriers;
     }
@@ -109,7 +109,7 @@ public class LocalDataSource : IDataSource
                     Magic = 0,
                 },
                 equipmentType: EquipmentType.Component,
-                passiveEffects: new List<PassiveEffect>())
+                passiveEffects: new List<PassiveEffect>()),
         };
         return components;
     }
@@ -143,18 +143,54 @@ public class LocalDataSource : IDataSource
                     Magic = 0,
                 },
                 equipmentType: EquipmentType.Blade,
-                passiveEffects: new List<PassiveEffect>())
+                passiveEffects: new List<PassiveEffect>()),
         };
         return weapons;
     }
 
     public List<IEquipment> GetAllEquipment()
     {
-        throw new NotImplementedException();
+        List<IEquipment> equipment = new();
+        equipment.AddRange(GetAllArmors());
+        equipment.AddRange(GetAllBarriers());
+        equipment.AddRange(GetAllComponents());
+        equipment.AddRange(GetAllWeapons());
+        return equipment;
     }
 
     public List<IPassiveEffect> GetAllPassiveEffects()
     {
-        throw new NotImplementedException();
+        List<IPassiveEffect> passiveEffects = new()
+        {
+            new PassiveEffect(id: 5000,
+                name: "Lucky Charm",
+                description: "Grants the user the ability to find more credits from battles.",
+                stats: new Stats()
+                {
+                    Level = 1,
+                    Attack = 0,
+                    Defense = 0,
+                    Speed = 0,
+                    Magic = 0,
+                },
+                passiveEffectType: PassiveEffectType.Credits,
+                passiveEffectStrength: 10),
+            new PassiveEffect(id: 5001,
+                name: "Basic Vitamins",
+                description: "Grants the user a balanced boost to their well-being.",
+                stats: new Stats()
+                {
+                    Level = 1,
+                    Attack = 1,
+                    Defense = 1,
+                    Speed = 1,
+                    Magic = 1,
+                },
+                passiveEffectType: PassiveEffectType.Stat,
+                passiveEffectStrength: 1),
+        };
+        
+
+        return passiveEffects;
     }
 }
